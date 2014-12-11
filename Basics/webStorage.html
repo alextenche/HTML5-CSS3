@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> Web Storage </title>
+	<style type="text/css">
+		#leftbox{
+			float: left;
+			padding: 20px;
+			border: 2px solid green;
+		}
+
+		#rightbox{
+			width: 250px;
+			margin-left: 350px;
+			padding: 20px;
+			border: 2px solid red;
+		}
+	</style>
+</head>
+
+<body>
+	<section id="leftbox">
+		<form>
+			<p>One:<input type="text" id="one"></p>
+			<p>Two:<textarea id="two"></textarea></p>
+			<p><input type="button" id="button" value="save"></p>
+		</form>
+	</section>
+
+
+	<section id="rightbox">
+		Display Results!
+	</section>
+
+	<script type="text/javascript">
+		
+		function doit(){
+			var button = document.getElementById('button');
+			button.addEventListener('click', saveit, false);
+			display();
+		}
+
+		function saveit(){
+			var one = document.getElementById('one').value;
+			var two = document.getElementById('two').value;
+			sessionStorage.setItem(one, two);
+			display();
+			document.getElementById('one').value = '';
+			document.getElementById('two').value = '';
+		}
+
+		function display(){
+			var rightbox = document.getElementById('rightbox');
+			rightbox.innerHTML = '';
+
+			for(var x = 0; x < sessionStorage.length; x++){
+				var a = sessionStorage.key(x);
+				var b = sessionStorage.getItem(a);
+				rightbox.innerHTML += a + ' and ' + b + '<br>';
+			}
+		}
+
+		window.addEventListener('load', doit, false);
+
+	</script>
+
+</body>
+</html>
