@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="author" content="Alexandru Tenche">
-		<title>Drawing Arcs</title>
+		<title>Drawing Paths</title>
 		<style type="text/css">
 			#Canvas1 {
 				border: dotted 1px black;
@@ -18,31 +18,41 @@
 						ctx.fillStyle = "red";
 						ctx.lineWidth = 5;
 						
-						// stroke a quarter arc
+						// draw an open path (not closed)
 						ctx.beginPath();
-						ctx.arc(50,150,75,1.5*Math.PI,2*Math.PI);
+						ctx.moveTo(30,180);
+						ctx.lineTo(50,25);
+						ctx.lineTo(125,50);
+						ctx.lineTo(175,175);
 						ctx.stroke();
 						
-						// stroke a three-quarter arc, going anti-clockwise
+						// draw a closed path
 						ctx.beginPath();
-						ctx.arc(300,150,75,0,1.5*Math.PI,false);
+						ctx.moveTo(225,175);
+						ctx.lineTo(250,25);
+						ctx.lineTo(325,20);
+						ctx.lineTo(375,175);
+						ctx.closePath();
 						ctx.stroke();
 						
-						// stroke and fill a circle
-						var degrees = 120;
-						var radians = (Math.PI /180) * degrees;
+						// draw a closed path
 						ctx.beginPath();
-						ctx.arc(550, 150 ,75 , 0, radians);
+						ctx.moveTo(425,175);
+						ctx.lineTo(450,25);
+						ctx.lineTo(525,50);
+						ctx.lineTo(575,175);
 						ctx.fill();
-						ctx.stroke(); 
+						ctx.stroke();
+					
+					
 					}
 				}
 			}
 		</script>
 	</head>
 	<body>
-		<h1>Drawing Arcs</h1>
-		<p>This example will draw arcs, both open and closed</p>
+		<h1>Drawing Paths</h1>
+		<p>This example will draw paths, both open and closed</p>
 		<canvas id="Canvas1" width="700" height="300">Your browser does not support canvas.</canvas>
 	</body>
 </html>
