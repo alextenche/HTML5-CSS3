@@ -14,6 +14,15 @@
 				if (theCanvas && theCanvas.getContext) {
 					var ctx = theCanvas.getContext("2d");
 					if (ctx) {
+						// draw an image directly onto the canvas at the top left
+						var srcImg = document.getElementById("img1");
+						ctx.drawImage(srcImg, 0,0);
+						
+						// draw the image scaled down onto the canvas
+						ctx.drawImage(srcImg, 350,150,350,150);
+						
+						// draw just a portion of the source image onto the canvas
+						ctx.drawImage(srcImg, 120, 100, 125, 100, 480, 20, 125,100);
 					}
 				}
 			}
@@ -27,7 +36,6 @@
 		<canvas id="Canvas1" width="715" height="315">Your browser does not support canvas.</canvas>
 		
 		<!-- source images used in this example -->
-		<img id="img1" src="images/emerald_bay.jpg" width="715" height="315" style="display:none;">
-		<video id="vid1" src="video/podcast_teaser.mp4" loop style="display:none"></video>
+		<img id="img1" src="images/harbor.jpg" width="715" height="315" style="display:none;">
 	</body>
 </html>
