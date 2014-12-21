@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta name="author" content="Alexandru Tenche">
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Tours Comparaison</title>
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript">
+			var tourdata = [
+				{ name: "Big Sur Retreat", duration: 200, elevation: 160, environment: 180, difficulty: 250 },
+				{ name: "Channel Islands Excursion", duration: 100, elevation: 50, environment: 100, difficulty: 75 },
+				{ name: "The Death Valley Survivor's Trek", duration: 100, elevation: 75, environment: 350, difficulty: 300 },
+				{ name: "In the Steps of John Muir", duration: 300, elevation: 200, environment: 100, difficulty: 350 },
+				{ name: "The Mt. Whitney Climbers Tour", duration: 400, elevation: 350, environment: 300, difficulty: 400 }
+			];
+			var tourChart = null;
+			var tourCtx = null;
+			
+			function drawChart(forWhichTour) {
+				drawBackground();
+				drawLabels(forWhichTour);
+				drawTourData(forWhichTour);
+			}
+
+			function drawBackground() {
+				tourCtx.save();
+
+				// fill in the chart background
+				tourCtx.fillStyle = "#e1d8b9";
+				tourCtx.fillRect(0,0,tourCtx.canvas.width,tourCtx.canvas.height);
+
+				// create the graph area
+				tourCtx.strokeStyle = "#252525";
+				tourCtx.strokeRect(180, 100, 480, 260);
+
+				// draw the chart lines
+				tourCtx.strokeStyle = "#989898";
+				for (var x = 180; x < 660; x += 20) {
+					tourCtx.beginPath();
+					tourCtx.moveTo(x, 100);
+					tourCtx.lineTo(x, 360);
+					tourCtx.stroke();
+				}
+        
+				tourCtx.restore();
+			}
+			
+			function drawLabels(forWhichTour) {
+				tourCtx.save();
+
+				// draw tour name
+				tourCtx.font = "24pt Arial";
+				tourCtx.fillStyle = "#3C6B92";
+				tourCtx.fillText("Tour Name: " + tourdata[forWhichTour].name, 20, 65);
+
+				// draw the labels
+				tourCtx.font = "20pt Arial";
+				tourCtx.fillStyle = "#3C6B92";
+				tourCtx.fillText("Duration", 20, 155);
+				tourCtx.fillText("Elevation", 20, 210);
+				tourCtx.fillText("Environment", 20, 265);
+				tourCtx.fillText("Difficulty", 20, 320);
+
+				tourCtx.restore();
+			}
+			
+			
+			function drawTourData(forWhichTour) {
+				tourCtx.save();
+
+				tourCtx.strokeStyle = "#606060";
+				tourCtx.fillStyle = "#f7f700";
+				// draw duration
+				tourCtx.fillRect(181, 130, tourdata[forWhichTour].duration, 30);
+				tourCtx.strokeRect(181, 130, tourdata[forWhichTour].duration, 30);
+				// draw elevation
+				tourCtx.fillRect(181, 185, tourdata[forWhichTour].elevation, 30);
+				tourCtx.strokeRect(181, 185, tourdata[forWhichTour].elevation, 30);
+				// draw environment
+				tourCtx.fillRect(181, 240, tourdata[forWhichTour].environment, 30);
+				tourCtx.strokeRect(181, 240, tourdata[forWhichTour].environment, 30);
+				// draw difficulty - green for easy, yellow for moderate, red for hard
+				if (tourdata[forWhichTour].difficulty <= 150)
+					tourCtx.fillStyle = "#00d366";
+				else if (tourdata[forWhichTour].difficulty > 150 && tourdata[forWhichTour].difficulty < 300)
+					tourCtx.fillStyle = "#f7f700";
+				else if (tourdata[forWhichTour].difficulty >= 300)
+					tourCtx.fillStyle = "#ce0000";
+				tourCtx.fillRect(181, 295, tourdata[forWhichTour].difficulty, 30);
+				tourCtx.strokeRect(181, 295, tourdata[forWhichTour].difficulty, 30);
+
+			tourCtx.restore();
+			}
+			
+			
+			$("document").ready(function () {
+				tourChart = document.getElementById("tourfinder");
+				tourCtx = tourChart.getContext("2d");
+
+				$("#tourselector").bind("change", function () { drawChart(this.selectedIndex) });
+
+				drawChart(0);
+			});
+		</script>
+	</head>
+	
+	<body>
+	
+		<p>Choose a tour: <select id="tourselector">
+			<option value="BigSur">Big Sur Retreat</option>
+			<option value="ChIs">Channel Islands Excursion</option>
+			<option value="DeathVal">The Death Valley Survivor's Trek</option>
+			<option value="JohnMuir">In the Steps of John Muir</option>
+			<option value="MtWhit">The Mt. Whitney Climbers Tour</option>
+		</select></p>
+		
+		<canvas id="tourfinder" width="700" height="400" style="border: 1px solid">Canvas not supported</canvas>
+
+	</body>
+</html>
