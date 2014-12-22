@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta name="author" content="Alexandru Tenche">
+	<meta charset="UTF-8">
+	<title>Absolute Positioning</title>
+
+	<style>
+		aside, article, section, header, footer, nav {
+			display: block;
+		}
+		
+		html, body {
+			margin: 0;
+			padding: 0;
+		}
+				
+		html {
+			background: #ccc;
+		}
+		
+		body {
+			width: 1000px;
+			background: #fff;
+			margin: 2em auto 2em;
+			font: 100% Arial, Helvetica, sans-serif;
+			padding: 25px;
+			position: relative;
+		}
+		
+		div {
+			margin-bottom: 25px;
+			width: 50px;
+			height: 50px;
+			padding: 25px;
+		}
+		
+		.container {
+			background: rgb(237,228,214);
+			padding: 25px;
+			position: relative;
+			height : 500px;
+		}
+		
+		.element1 {
+			background: rgb(211, 206, 61);
+			position: absolute;
+			width: 100px;
+			height: 150px;
+			top :100px;
+			left: 100px;
+		}
+		
+		.element2 {
+			background: rgb(85, 66, 54);
+			position: absolute;
+			width: 100px;
+			height: 150px;
+			left: 425px;
+		}
+		
+		.element3 {
+			background: rgb(247,120,37);
+			position: absolute;
+			width: 100px;
+			height: 150px;
+			left: 750px;
+			top: 100px;
+		}
+		
+	</style>
+</head>
+
+<body>
+	<h1>Absolute Positioning</h1>
+
+	<section class="container">
+		<div class="element1">One</div>
+		<div class="element2">Two</div>
+		<div class="element3">Three</div>
+	</section>
+</body>
+</html>
