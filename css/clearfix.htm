@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html>
-<head>
+	<head>
 	<meta charset="utf-8">
 	<meta name="author" content="Tenche Alex">
-	<title>Containing Floats</title>
+	<title>clearfix</title>
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -15,12 +15,8 @@
 			margin: 0;
 			padding: 0;
 		}
-		html {
-			background: rgb(108,135,178);
-		}
 		body {
 			width: 600px;
-			background: #fff;
 			margin: 0 auto;
 			font: 90% Georgia, "Times New Roman", Times, serif;
 		}
@@ -28,17 +24,17 @@
 			width: 50px;
 			height: 50px;
 			padding: 50px;
+			margin-right: 25px;
 		}
 		section {
 			background: rgb(178,155,107);
 			border: 1px solid black;
-			padding: 10px;
-			width: 470px;
-			float: left;
+			padding: 25px 0 25px 50px;
+			margin-top: 50px;
 		}
 		.one {
 			background: rgb(207, 255, 245);
-			float: left;
+			float: left; 
 		}
 		.two {
 			background: rgb(101,209,255);
@@ -47,14 +43,30 @@
 		.three {
 			background: rgb(255, 231, 181);
 			float: left;
-			
 		}
-	
+		.clearfix:before,
+		.clearfix:after{
+			content: "";
+			display: table;
+		}
+		clearfix:after{
+			clear: both;
+		}
 	</style>
+	
+	<!--[if lt IE 8]>
+		<style>
+			/* for IE<8(trigger hasLayout) */
+			.clearfix{
+				zoom: 1;
+			}
+		</style>
+	<![endif]-->
+	
 </head>
 
 <body>
-	<section>
+	<section class="clearfix">
 		<div class="one">One</div>
 		<div class="two">Two</div>
 		<div class="three">Three</div>
