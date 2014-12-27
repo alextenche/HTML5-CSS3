@@ -1,6 +1,17 @@
 @charset "UTF-8";
 
+/*Lab steps:
+
+1. In the banner styles section, (line 276) modify the styles for the banner and banner paragraph so that its height matches the banner and its width matches the aside column (remember to take the current padding into account). Then using positioning to line up the paragraph with the right edge of the banner, so that it appears to line up with the aside column below it. Finally, ensure that content is not allowed to flow outside of the banner div tag.
+
+2. In the footer, locate the twitter link. Using the class attribute, write a selector (at around line 691) that fixes the position of the twitter icon to always be 20% away from the bottom edge of the screen, and snug up against the left edge of the screen.*/
+
 /* CSS Document */
+
+/*copyright lynda.com 2011
+feel free to use these styles as you wish
+attribution would be nice, but not required
+*/
 
 /* desolve color palette
 #4C4341     rgb(76, 67, 65)  ASH
@@ -138,30 +149,30 @@ em {
 	font-style: italic;
 }
 /*Basic layout styles -----------------------------------------------------------------------------------------------------------*/
-body{
-	width: 1280px;
+
+body {
+	width: 1180px;
 	margin: 0 auto;
-}
-
-article{
-	float: left;
-	width: 850px;
-	padding-left: 50px;
-	
-}
-
-aside{
-	float: right;
-	width: 280px;
-	padding-right: 50px;
 }
 
 header {
 	height: 165px;
 }
 
+article {
+	float: left;
+	width: 800px;
+	padding-left: 50px;
+}
+
+aside {
+	float: right;
+	width: 230px;
+	padding-right: 50px;
+}
+
 #pageFooter {
-	clear: both;
+	clear:both;
 	overflow:hidden;
 	height: 150px;
 }
@@ -266,10 +277,16 @@ a.shop {
 .banner {
 	height: 350px;
 	padding-left: 50px;
-	overflow: hidden;
 	background: url(../_images/gallery_banner.jpg) no-repeat;
 	margin-bottom: 4em;
-	position: relative;
+}
+
+.banner p {
+	padding: 15px 15px 0;
+	font-size: 1em;
+	line-height: 1.9;
+	color: #fff;
+	background: rgba(123, 121, 143, .8);
 }
 
 .banner h1 {
@@ -279,19 +296,6 @@ a.shop {
 	letter-spacing:.1em;
 	text-transform: uppercase;
 }
-
-.banner p {
-	width: 300px;
-	padding: 15px 15px 0;
-	height: 335px;
-	font-size: 1.2em;
-	color: #fff;
-	background: rgba(123, 121, 143, .8);
-	position: absolute;
-	top: 0;
-	right: 0;
-}
-
 
 /*article styles*/
 article section {
@@ -332,13 +336,13 @@ article ul {
 	background: rgb(237, 228, 214);
 	float: left;
 	margin-right: 50px;
-	width: 360px;
+	width: 335px;
 	padding: 20px;
 	border: none;
 	border-radius: 15px 0 15px 0;
 	font-size: 90%;
 }
-.news+.news{
+.news + .news {
 	margin-right: 0;
 }
 .news h2 {
@@ -684,15 +688,15 @@ input[type="search"] {
 	margin-right: 3.9%;
 	text-align: right;
 }
+/*position twitter icon*/
 
-#pageFooter a {
+.twitter a {
 	display:block;
-	height: 100px;
-	line-height: 100px;
+	width: 90px;
+	height: 90px;
 	border: none;
-	color:rgb(76, 67, 65);
-	padding-left: 95px;
 	background: url(../_images/tweet_90.png) no-repeat;
+	text-indent: 2000em;
 }
 
 #pageFooter form {
