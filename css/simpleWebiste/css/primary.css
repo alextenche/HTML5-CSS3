@@ -1,0 +1,70 @@
+body{
+	font: 0.8em Arial, sans-serif;
+}
+
+h1,ul{
+	margin: 0;
+	padding: 0;
+}
+
+.clear{
+	clear: both;
+}
+
+#wrap{
+	width: 940px;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+header{
+	margin-bottom: 10px;
+}
+
+#menu ul{
+	list-style: none;
+	height: 30px;
+	border-bottom: 1px solid black;
+}
+
+#menu li{
+	float: left;
+}
+
+#menu ul li a{
+	color: black;
+	display: block;
+	padding: 0 20px;
+	line-height: 30px;
+	text-decoration: none;
+}
+
+#menu ul li a:hover, #menu ul li a.selected{
+	background: black;
+	color: white;
+}
+
+#content{
+	background: #ccc;
+	float: left;
+	width: 680px;
+	padding: 10px;
+}
+
+#content h1{
+	font-size: 1.6em;
+}
+
+#side{
+	background: #ddd;
+	width: 219px;
+	float: right;
+	padding: 10px;
+	border-left: 1px solid #aaa;
+	min-height: 200px;
+}
+
+footer{
+	background: #aaa;
+	padding: 10px;
+}
