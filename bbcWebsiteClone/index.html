@@ -6,12 +6,14 @@
 	<style type="text/css">
 	body{
 		margin: 0;
+		font-family: arial, helvetica,sans-serif;
 	}
 
 	#topbar{
 		background-color: #7a0000;
 		width: 100%;
 		height: 40px;
+		color: white;
 	}
 	.fixedwidth{
 		width: 976px;
@@ -19,14 +21,49 @@
 	}
 	#logo{
 		padding-top: 8px;
+		padding-bottom: 4px;
 		float: left;
 		border-right: 1px solid #990000;
-		padding-right: 20px;
-
+		padding-right: 10px;
 	}
-	img{
-		/*opacity: 0;*/
-		/*color: white;*/
+	#logo_img{
+		-webkit-filter: invert(100%);
+	}
+	#signin{
+		font-weight: bold;
+		font-size: 0.9em;
+		padding: 10px 40px 13px 20px;
+		float: left;
+		border-right: 1px solid #990000;
+		height: 100%;
+	}
+	#nav{
+		float: left;
+	}
+
+	#nav ul{
+		margin: 0;
+		padding: 0;
+	}
+
+	#nav li{
+		list-style: none;
+		font-weight: bold;
+		font-size: 0.9em;
+		border-right: 1px solid #990000;
+		height: 100%;
+		padding: 10px 11px 13px 12px;
+		float: left;
+	}
+	#search{
+		float: left;
+		padding: 5px 0 0 10px;
+	}
+
+	#search input{
+		height: 23px;
+		width: 90px;
+		font-size: 1.2em;
 	}
 	</style>
 </head>
@@ -36,9 +73,25 @@
 		<div id="topbar">
 			<div class="fixedwidth">
 				<div id="logo">
-					<img src="images/logo.png">	
+					<img id="logo_img" src="images/logo.png">	
 				</div>
-				
+				<div id="signin">Sign In</div>
+				<div id="nav">
+					<ul>
+						<li>News</li>
+						<li>Sports</li>
+						<li>Weather</li>
+						<li>Earth</li>
+						<li>Future</li>
+						<li>Shop</li>
+						<li>TV</li>
+						<li>Radio</li>
+						<li>More...</li>
+					</ul>
+				</div>
+				<div id="search">
+					<input type="text">
+				</div>
 			</div>
 		</div>
 
