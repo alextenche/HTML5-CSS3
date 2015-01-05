@@ -163,8 +163,7 @@ h1{
 #watchListen{
 	background-color: #eeeeee;
 	float: right;
-	width: 350px;
-	height: 200px;
+	width: 339px;
 	position: relative;
 	top: -85px;
 }
@@ -188,4 +187,27 @@ h2{
 	background-color: #d1700e;
 	width: 143px;
 	border-right: 1px solid white;
+}
+.wlBlock a{
+	color: white;
+}
+.wlBlock p{
+	margin: 6px 10px 5px 10px;
+}
+#watchListen ul{
+	margin: 0;
+	padding: 0 10px 10px 10px;
+}
+#watchListen li{
+	list-style: none;
+	background-image: url(../images/live.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 26px;
+	padding: 5px 0 2px 28px;
+	font-size: 1.1em;
+	
+}
+.borderBottom{
+	border-bottom: 1px solid #ddcdcd;
 }
