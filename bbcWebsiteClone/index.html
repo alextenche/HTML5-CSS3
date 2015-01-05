@@ -3,69 +3,7 @@
 <head>
 	<meta name="author" content="Tenche Alexandru">
 	<title>BBC Website - Clone</title>
-	<style type="text/css">
-	body{
-		margin: 0;
-		font-family: arial, helvetica,sans-serif;
-	}
-
-	#topbar{
-		background-color: #7a0000;
-		width: 100%;
-		height: 40px;
-		color: white;
-	}
-	.fixedwidth{
-		width: 976px;
-		margin: 0 auto;
-	}
-	#logo{
-		padding-top: 8px;
-		padding-bottom: 4px;
-		float: left;
-		border-right: 1px solid #990000;
-		padding-right: 10px;
-	}
-	#logo_img{
-		-webkit-filter: invert(100%);
-	}
-	#signin{
-		font-weight: bold;
-		font-size: 0.9em;
-		padding: 10px 40px 13px 20px;
-		float: left;
-		border-right: 1px solid #990000;
-		height: 100%;
-	}
-	#nav{
-		float: left;
-	}
-
-	#nav ul{
-		margin: 0;
-		padding: 0;
-	}
-
-	#nav li{
-		list-style: none;
-		font-weight: bold;
-		font-size: 0.9em;
-		border-right: 1px solid #990000;
-		height: 100%;
-		padding: 10px 11px 13px 12px;
-		float: left;
-	}
-	#search{
-		float: left;
-		padding: 5px 0 0 10px;
-	}
-
-	#search input{
-		height: 23px;
-		width: 90px;
-		font-size: 1.2em;
-	}
-	</style>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 
@@ -90,7 +28,74 @@
 					</ul>
 				</div>
 				<div id="search">
-					<input type="text">
+					<input type="text" placeholder="Search">
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+
+			<div id="newsbar">
+				<div class="fixedwidth">
+					<p id="newsHeader">NEWS<span id="uk">UK</span></p>
+					<div id="rss">RSS <img src="images/rss.gif"></div>
+
+					<div class="clearfix"></div>
+
+					<div id="topicmenu">
+						<ul>
+							<li>Home</li>
+							<li>UK</li>
+							<li>Africa</li>
+							<li>Asia</li>
+							<li>Australia</li>
+							<li>Europe</li>
+							<li>Latin America</li>
+							<li>Mid-East</li>
+							<li>US & Canada</li>
+							<li>Business</li>
+							<li>Health</li>
+							<li>Sci/Environment</li>
+							<li>Tech</li>
+							<li>Entertainment</li>
+							<li style="border-right:none">Video</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+
+			<div id="content">
+				<div class="fixedwidth">
+					<p><span class="date">5 January 2015</span> Last updated at 16:20 GMT</p>
+					<h1>Salvage team boards listing ship</h1>
+					<img class="headlineImage" src="images/content_image.jpg">
+					<div class="newsItem">
+						<p>Investigators seek the reason why a car transporter ship had to be deliberately grounded in the Solent.</p>
+
+						<p class="links"><a class="video" href="#">Aerial footage of stranded ship</a><br>
+						<a href="#">Cargo ship 'grounded deliberately'</a>
+						<a class="video" href="#">Owner: Salvage plan could take days</a>
+						<a class="video" href="#">Watch Cargo salvage team's difficult task</a>
+						<a class="video" href="#">Watch First footage of ship</a>
+						<a class="video" href="#">Watch 'Not an everyday rescue' </a></p>
+
+					</div>
+					
+					<div id="watchListen">
+						<img class="bullets" src="images/bullets.png">
+						<h2>Watch/Listen</h2>
+						<div class="clearfix"></div>
+						<img src="images/arrow_left.png" class="leftArrow">
+						<div class="wlBlock">
+							<img src="images/slide_1.png">
+							<p><a href="#">R4 Today presenters taught urban slang</a></p>
+						</div>
+						
+						<img src="images/slide_2.png">
+						<img src="images/arrow_right.png">
+
+					</div>
 				</div>
 			</div>
 		</div>
