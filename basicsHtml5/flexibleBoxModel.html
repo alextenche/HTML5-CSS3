@@ -1,0 +1,135 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Flexible Boxes</title>
+	<style type="text/css">
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+
+	header, section, footer, aside, hgroup{
+		display:block;
+	}
+
+	body{
+		width:100%;
+		display:-webkit-box;
+		-webkit-box-pack: center;
+	}
+
+	#wrapper{
+		max-width: 1000px;
+		margin: 20px 0 px;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-box-flex: 1;
+	}
+
+	#head{
+		background: orange;
+		border: 2px solid black;
+		padding: 20px;
+	}
+
+	article{
+		border: 1px solid black;
+		display: -webkit-box;
+		padding: 10px;
+		margin: 10px;
+		-webkit-box-orient: vertical;
+		-webkit-box-flex: 1;
+	}
+
+	#navigation{
+		border: red;
+		background: yellow;
+	}
+
+	#navigation li{
+		display: inline-block;
+		list-style: none;
+		padding: 3px;
+	}
+
+	#new{
+		display: -webkit-box;
+		-webkit-box-orient: horizontal;
+	}
+
+	#main{
+		border: 1px solid black;
+		-webkit-box-flex: 1;
+		padding: 30px;
+	}
+
+	#side-box{
+		border: 1px solid green;
+		width: 230px;
+		padding: 10px;
+		margin: 10px;
+	}
+
+	#copyright{
+		text-align: center;
+		padding: 20px;
+		border-top: 1px solid black;
+		margin-top: 20px;
+	}
+	</style>">
+</head>
+
+<body>
+	<div id="wrapper">
+	<header id="head">
+		<h1>Flexibile Box Model</h1>
+	</header>
+	<nav id="navigation">
+		<ul>
+			<li>home</li>
+			<li>portofolio</li>
+			<li>contact</li>
+		</ul>
+	</nav>
+	<div id="new">
+	<section id="main">
+		<article>
+			<header>
+				<hgroup>
+					<h1>Article title</h1>
+					<h2>Article subtitle</h2>
+				</hgroup>
+			</header>
+			<p>This is the article text</p>
+			<footer>
+				<p>-written by alex</p>
+			</footer>
+		</article>
+		
+		<article>
+			<header>
+				<hgroup>
+					<h1>2nd Article title</h1>
+					<h2>2nd Article subtitle</h2>
+				</hgroup>
+			</header>
+			<p>This is the article text</p>
+			<footer>
+				<p>-written by alex</p>
+			</footer>
+		</article>
+	</section>
+	
+	<aside id="side-box">
+		<h2>News</h2>
+		Alex is back!
+	</aside>
+	</div>
+	<footer id="copyright">
+		Copyright Lexucuflexu
+	</footer>
+	</div>
+</body>
+</html>
