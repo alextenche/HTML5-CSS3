@@ -1,0 +1,16 @@
+
+.box {
+	background: #f2dfc5 url('img/bg-tiled.png') no-repeat scroll center center;
+}
+
+.scroll{
+	background-attachment: scroll;
+}
+
+.fixed{
+	background-attachment: fixed;
+}
+
+.local{
+	background-attachment: local;
+}
