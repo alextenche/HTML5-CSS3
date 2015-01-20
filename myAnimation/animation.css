@@ -1,0 +1,18 @@
+
+/*	Animations - WebKit only
+------------------------------------------ */
+.ship {
+	-webkit-animation: move-ship 220s linear;
+	-moz-animation: move-ship 220s linear;
+}
+
+
+/*	Keyframes - WebKit only
+------------------------------------------ */
+@-webkit-keyframes move-ship {
+	50%{ -webkit-transform: translatex(-500px); }
+}
+
+@-moz-keyframes move-ship {
+	50%{ -moz-transform: translatex(-500px); }
+}

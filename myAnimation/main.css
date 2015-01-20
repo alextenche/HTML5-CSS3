@@ -1,0 +1,18 @@
+
+body {
+	background: #F0FCFF url('img/background.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+ 	 -moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+.ship {
+	width: 90px;
+	position: absolute;
+	top: 66%;
+	left: 75%;
+}
+.ship img {
+	width: 100%;
+}

@@ -1,0 +1,65 @@
+
+/*	Animations - WebKit only
+------------------------------------------ */
+.boat {
+	-webkit-animation: rock-boat 3s ease-in-out infinite;
+}
+
+.submarine {
+	-webkit-animation: rock-submarine 15s ease-in-out infinite;
+}
+
+.boat::after {
+	-webkit-animation: steam 4s 2s infinite;
+}
+body {
+	-webkit-animation: bg-move 8s ease-out forwards;	
+}
+.mike {
+	-webkit-animation: mike-move 6s 6s ease-out forwards,
+					   mike-float 3.2s infinite;
+}
+
+
+/*	Keyframes - WebKit only
+------------------------------------------ */
+@-webkit-keyframes rock-boat {
+	50%{ -webkit-transform: rotate(-5deg) translateY(-10px); }
+}
+
+@-webkit-keyframes rock-submarine {
+	50%{ -webkit-transform: rotate(-2deg) translateY(-100px) translateX(500px); }
+}
+
+@-webkit-keyframes steam {
+	40%,
+	60%  { opacity: 1}
+	100% { -webkit-transform: translate(-15%, -35%) rotateZ(20deg); }
+}
+
+@-webkit-keyframes bg-move {
+	0% 	 { background-position:  100% -460px; }
+	100% { background-position: -105% -460px; }
+}
+
+@-webkit-keyframes mike-move {
+	100% { left: 12% }
+}
+
+@-webkit-keyframes mike-float {
+	50% { -webkit-transform: rotateZ(5deg) translateY(-5px); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
